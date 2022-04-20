@@ -8,12 +8,14 @@ void RemoveDups(char* str) {
 	char prev = str[0];
 
 	for (size_t i = 1; i < len; i++){
-		if (str[i] != prev){
-			prev = str[i];
-			str[j] = prev;
-			j++;
+		if (str[i] == prev){
+			continue;
 		}
+		prev = str[i];
+		str[j] = prev;
+		j++;
 	}
+
 	str[j] = '\0';
 }
 
